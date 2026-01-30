@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuwaze | Community Dashboard</title>
+    <meta name="description"
+        content="Real-time statistics and insights for Eldoret's civic engagement. See reports, resolutions, and community impact.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar glass">
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="index.html"
+                    style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem; color: inherit;">
+                    <i class="fa-solid fa-lightbulb"></i> Tuwaze
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="#" class="active-link">Dashboard</a></li>
+                <li><a href="#register" class="btn btn-primary btn-sm">Sign In</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="header-text">
+                <h1>Community <span class="highlight">Insights</span></h1>
+                <p>Transparent real-time data on how we are improving Eldoret together.</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-content">
+        <div class="container container-offset">
+
+            <!-- Section 1: At-a-Glance Metrics -->
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon"><i class="fa-solid fa-file-signature"></i></div>
+                    <div class="metric-info">
+                        <h3>Total Reports</h3>
+                        <div class="metric-value" data-target="1248">0</div>
+                        <span class="metric-trend positive"><i class="fa-solid fa-arrow-up"></i> 12% this month</span>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon"><i class="fa-solid fa-check-double"></i></div>
+                    <div class="metric-info">
+                        <h3>Resolution Rate</h3>
+                        <div class="metric-value" data-target="89">%</div>
+                        <span class="metric-trend positive"><i class="fa-solid fa-arrow-up"></i> 5% this month</span>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <div class="metric-info">
+                        <h3>Avg. Response</h3>
+                        <div class="metric-value">48h</div>
+                        <span class="metric-label">Target: 24h</span>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <div class="metric-info">
+                        <h3>Active Wards</h3>
+                        <div class="metric-value" data-target="15">0</div>
+                        <span class="metric-trend neutral"><i class="fa-solid fa-minus"></i> Stable</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Statistical Breakdowns & Insights -->
+            <div class="dashboard-grid-layout">
+
+                <!-- Main Stats Column -->
+                <div class="stats-column">
+
+                    <!-- Performance Goals (Target vs Actual) -->
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-bullseye"></i> Performance Goals</h3>
+                            <button class="btn-icon"><i class="fa-solid fa-ellipsis"></i></button>
+                        </div>
+                        <div class="charts-container">
+                            <div class="bar-chart-row">
+                                <div class="bar-info" style="flex: 1;">
+                                    <div class="bar-header"
+                                        style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:0.9rem;">
+                                        <span class="bar-label" style="color:var(--text-dark); font-weight:600;">Monthly
+                                            Resolutions</span>
+                                        <span class="bar-values"
+                                            style="font-size:0.85rem; color:var(--text-muted);">Actual: 842 / Target:
+                                            1000</span>
+                                    </div>
+                                    <div class="bar-track" style="position:relative;">
+                                        <div class="bar-fill" style="width: 84%; background: var(--primary-color);">
+                                        </div>
+                                        <div class="target-marker"
+                                            style="position:absolute; left:0; top:0; bottom:0; width:2px; background:rgba(0,0,0,0.3);">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bar-chart-row">
+                                <div class="bar-info" style="flex: 1;">
+                                    <div class="bar-header"
+                                        style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:0.9rem;">
+                                        <span class="bar-label" style="color:var(--text-dark); font-weight:600;">Avg
+                                            Response Time</span>
+                                        <span class="bar-values"
+                                            style="font-size:0.85rem; color:var(--text-muted);">Actual: 48h / Target:
+                                            24h</span>
+                                    </div>
+                                    <div class="bar-track">
+                                        <!-- Inverse logic: less is better, but visually longer bar usually means 'more'. 
+                                             Let's show 'Efficiency' or just a filled bar. 
+                                             If 48h is actual and 24h is target, we are over target. 
+                                             Let's show a color warning. -->
+                                        <div class="bar-fill"
+                                            style="width: 100%; background: #ef4444; max-width: 100%;"></div>
+                                    </div>
+                                    <div style="font-size:0.75rem; color:#ef4444; margin-top:2px; text-align:right;">
+                                        Intervention Needed</div>
+                                </div>
+                            </div>
+                            <div class="bar-chart-row">
+                                <div class="bar-info" style="flex: 1;">
+                                    <div class="bar-header"
+                                        style="display:flex; justify-content:space-between; margin-bottom:5px; font-size:0.9rem;">
+                                        <span class="bar-label" style="color:var(--text-dark); font-weight:600;">User
+                                            Satisfaction</span>
+                                        <span class="bar-values" style="font-size:0.85rem; color:var(--text-muted);">4.8
+                                            / 5.0</span>
+                                    </div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill" style="width: 96%; background: var(--accent-color);">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Status Distribution -->
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-list-check"></i> Status Distribution</h3>
+                        </div>
+                        <div class="status-grid">
+                            <div class="status-item status-resolved">
+                                <span class="status-dot"></span>
+                                <h4>Resolved</h4>
+                                <p>842</p>
+                            </div>
+                            <div class="status-item status-review">
+                                <span class="status-dot"></span>
+                                <h4>In Review</h4>
+                                <p>315</p>
+                            </div>
+                            <div class="status-item status-pending">
+                                <span class="status-dot"></span>
+                                <h4>Pending</h4>
+                                <p>91</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Issue Category Breakdown (Donut Chart) -->
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-chart-pie"></i> Issue Category Breakdown</h3>
+                        </div>
+                        <div class="donut-chart-container">
+                            <div class="donut-chart">
+                                <div class="center-text">
+                                    <strong>1,248</strong>
+                                    <span>Reports</span>
+                                </div>
+                            </div>
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <span class="legend-dot" style="background: var(--primary-color);"></span>
+                                    <div class="legend-info">
+                                        <span class="legend-label">Structures Improvement (vandalism, streetlight outages, graffiti)</span>
+                                        <span class="legend-val">40%</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-dot" style="background: var(--accent-color);"></span>
+                                    <div class="legend-info">
+                                        <span class="legend-label">Roads</span>
+                                        <span class="legend-val">35%</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-dot" style="background: #0ea5e9;"></span>
+                                    <div class="legend-info">
+                                        <span class="legend-label">Security</span>
+                                        <span class="legend-val">15%</span>
+                                    </div>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-dot" style="background: #64748b;"></span>
+                                    <div class="legend-info">
+                                        <span class="legend-label">Waste</span>
+                                        <span class="legend-val">10%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Sidebar / Personal & Alerts -->
+                <aside class="sidebar-column">
+
+                    <!-- Feature: Personal Impact (Mocked for unlogged user) -->
+                    <div class="content-card highlight-card">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-user-astronaut"></i> Your Impact</h3>
+                        </div>
+                        <div class="personal-impact-content">
+                            <p class="impact-text">Sign in to see your personal contribution to Eldoret.</p>
+                            <div class="impact-stats-blur">
+                                <div class="blur-row"><span>Reports</span> <span>--</span></div>
+                                <div class="blur-row"><span>Approved</span> <span>--</span></div>
+                            </div>
+                            <a href="#" class="btn btn-primary btn-full">Login to View</a>
+                        </div>
+                    </div>
+
+                    <!-- Insights & Alerts -->
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3><i class="fa-solid fa-lightbulb"></i> Insights & Alerts</h3>
+                        </div>
+                        <div class="insights-list">
+                            <div class="insight-item">
+                                <div class="insight-icon"><i class="fa-solid fa-circle-info"></i></div>
+                                <div class="insight-text">
+                                    <strong>Pattern Detected</strong>
+                                    <p>Increased reports of streetlight outages in Kapsoya ward this week.</p>
+                                </div>
+                            </div>
+                            <div class="insight-item">
+                                <div class="insight-icon success"><i class="fa-solid fa-trophy"></i></div>
+                                <div class="insight-text">
+                                    <strong>Milestone</strong>
+                                    <p>Langas ward reached 95% resolution rate on sanitation issues!</p>
+                                </div>
+                            </div>
+                            <div class="insight-item">
+                                <div class="insight-icon warning"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                                <div class="insight-text">
+                                    <strong>Civic Alert</strong>
+                                    <p>Town hall meeting scheduled for Friday 2 PM at Central Square.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div class="cta-mini-card">
+                        <h3>See something?</h3>
+                        <p>Don't just watch the stats, improve them.</p>
+                        <a href="index.html#register" class="btn btn-secondary btn-full">Submit a Report</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Tuwaze</h3>
+                    <p>Empowering Eldoret, one report at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#features">Features</a>
+                    <a href="dashboard.html" class="active-footer-link">Dashboard</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Tuwaze Platform. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
