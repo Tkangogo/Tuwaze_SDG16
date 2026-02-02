@@ -1,0 +1,33 @@
+const mysql = require('mysql2');
+const express = require('express');
+const app = express();
+
+
+const connection = mysql.createConnection ({
+    host: 'localhost',
+    database: 'tuwaze',
+    user:'root',
+    password: 'T@104rico',
+    port: 3306,
+})
+
+app.get('/dashboard', (req, res) => {
+    connection.query('select * from users', (dbError, queryResult) => {
+    if (dbError) {
+        console.log("Database connection error: ", dbError.message);
+    } else {
+        console.log(getGenderCount(queryResult));
+        res.render("dashboard.ejs", {allUsers: queryResult, maleFemaleCount: getGenderCount(queryResult)})
+    }
+    });
+})
+
+app.listen(3000)
+
+function getGenderCount(users) {
+    return users.reduce((count, user) => {
+        if (user.gender === "Male") count.male += 1;
+        if (user.gender === "Female") count.female += 1;
+        return count;
+    }, { male: 0, female: 0 });
+}

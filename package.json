@@ -1,0 +1,25 @@
+{
+  "name": "tuwaze_sdg16",
+  "version": "1.0.0",
+  "description": "A civic engagement and community safety platform that empowers residents of Eldoret to report issues, access justice information, and participate in local governance — all in one place.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tkangogo/Tuwaze_SDG16.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tkangogo/Tuwaze_SDG16/issues"
+  },
+  "homepage": "https://github.com/Tkangogo/Tuwaze_SDG16#readme",
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "mysql2": "^3.16.2"
+  }
+}
