@@ -4,9 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
 </head>
 <body>
     <h1>Male: <%= maleFemaleCount.male %></h1>
     <h1>Female: <%= maleFemaleCount.female %></h1>
+
+    <!-- Canvas for Pie Chart -->
+    <canvas id="genderChart" width="100" height="100"></canvas>
+
+    <script>
+        // Get data from server-side EJS variables
+        const maleCount = <%= JSON.stringify(maleFemaleCount.male || 0) %>;
+        const femaleCount = <%= JSON.stringify(maleFemaleCount.female || 0) %>;
+
+        const ctx = document.getElementById('genderChart').getContext('2d');
+
+        const genderChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Male', 'Female'],
+                datasets: [{
+                    label: 'Gender Ratio',
+                    data: [maleCount, femaleCount],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.7)', // Blue for Male
+                        'rgba(255, 99, 132, 0.7)'  // Pink for Female
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 99, 132, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Male vs Female Users'
+                    }
+                }
+            }
+        });
+    </script>
+    
 </body>
 </html>
