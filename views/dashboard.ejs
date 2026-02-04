@@ -12,7 +12,7 @@
     <h1>Female: <%= maleFemaleCount.female %></h1>
 
     <!-- Canvas for Pie Chart -->
-    <canvas id="genderChart" width="100" height="100"></canvas>
+    <canvas id="genderChart" width="200" height="200"></canvas>
 
     <script>
         // Get data from server-side EJS variables
@@ -40,7 +40,7 @@
                 }]
             },
             options: {
-                responsive: true,
+                responsive: false,
                 plugins: {
                     legend: {
                         position: 'top',
