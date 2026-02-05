@@ -10,6 +10,13 @@
 <body>
     <h1>Male: <%= maleFemaleCount.male %></h1>
     <h1>Female: <%= maleFemaleCount.female %></h1>
+    <div class = "user-list">
+        <h2>All Users (<%= allUsers.length %>)</h2>
+        <ul>
+            <% allUsers.forEach(user => { %>
+                <li><%= user.full_name %></li>
+            <% }) %>
+    </div>
 
     <!-- Canvas for Pie Chart -->
     <canvas id="genderChart" width="200" height="200"></canvas>

@@ -21,9 +21,23 @@ app.get("/signup", (req, res) => {
   res.render("signup.ejs");
 });
 
+app.post("/signup", express.urlencoded({ extended: true }), (req, res) => {
+  console.log(req.body);
+  const insertStatement = `INSERT INTO users (full_name, phone_number, email, gender, password_hash, role, ward, is_anonymous_allowed) VALUES ('${req.body.fullname}', '${req.body.phonenumber}', '${req.body.email}', '${req.body.gender}', '${req.body.password}', 'citizen', '${req.body.location}', TRUE)`;
+  connection.query(insertStatement, (insertError) => {
+    if (insertError) {
+      res.status(500).send("Server Error!")
+    } else {
+      res.redirect("/login")
+    }
+  })
+});
+
+
 app.get("/login", (req, res) => {
   res.render("login.ejs");
 });
+
 
 app.get('/dashboard', (req, res) => {
     connection.query('select * from users', (dbError, queryResult) => {
