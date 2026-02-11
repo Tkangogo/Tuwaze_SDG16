@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/Tkangogo/Tuwaze_SDG16#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "ejs": "^4.0.1",
     "express": "^5.2.1",
+    "express-session": "^1.19.0",
     "mysql2": "^3.16.2"
   }
 }
