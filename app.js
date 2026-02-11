@@ -14,7 +14,7 @@ app.use(session ({
   secret: "encryptionKey",
   resave: false,
   saveUninitialized: true,
-  options: {secure: true, expires: new Date(Date.now() + 60 * 60 * 1000)}, // this sums up to 1hr
+  cookie: {secure: false, maxAge: 60 * 60 * 1000}, // this sums up to 1hr
 }))
 
 

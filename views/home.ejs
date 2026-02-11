@@ -449,17 +449,8 @@
   </head>
   <body>
     <!-- Navigation -->
-    <nav>
-      <div class="nav-container">
-        <a href="/" class="logo"> <span>🌱</span> Tuwaze </a>
-        <ul class="nav-links">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="/dashboard" class="cta-button">Dashboard</a></li>
-        </ul>
-      </div>
-    </nav>
+    <!-- Navigation -->
+     <%- include("partials/header.ejs") %>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -585,6 +576,26 @@
         <button class="btn-primary">Join Tuwaze Today</button>
       </div>
     </section>
+
+
+    <!-- Anonymous tip -->
+     <button class="tipbtn">Anonymous Tip <br></button>
+
+     <form action="">
+      <div class="tipform">
+        <div class="form-header">
+          <h2>Submit an Anonymous Tip</h2>
+          <button class="close-tip-form">close</button>
+        </div>
+        <select name="category" id="category">
+          <option value="corruption">Corruption</option>
+          <option value="human-rights">Human Rights Violation</option>
+          <option value="safety-concern">Safety Concern</option>
+          <option value="other">Other</option>
+        </select>
+        <textarea placeholder="Describe your anonymous tip here..." required></textarea>
+      </div>
+    </form>
 
     <!-- Footer -->
     <footer id="contact">
